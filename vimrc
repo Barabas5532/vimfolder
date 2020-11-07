@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
@@ -27,9 +28,6 @@ set wildmenu
 syntax enable
 set background=light
 colorscheme solarized
-
-" auto indent
-filetype plugin indent on
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -53,6 +51,7 @@ xnoremap <leader>w <esc>:'<,'>:w !wc -w<CR>
 " let g:ycm_show_diagnostics_ui = 0
 " don't do automatic #include header 
 let g:ycm_clangd_args = [ '--header-insertion=never' ]
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "jump to definition
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 
