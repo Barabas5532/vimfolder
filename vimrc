@@ -17,6 +17,9 @@ Plugin 'ycm-core/YouCompleteMe'
 call vundle#end()            " required for Vundle
 filetype plugin indent on    " required for Vundle
 
+" Automatically load the doxygen syntax extensions
+:let g:load_doxygen_syntax=1
+
 set nu
 " show line numbers relative to current line
 set relativenumber
