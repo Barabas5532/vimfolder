@@ -62,6 +62,14 @@ nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 "https://clang.llvm.org/docs/ClangFormat.html
 noremap <leader>f :py3file /usr/share/clang/clang-format.py<cr>
 
+"format the whole file at once
+:function FormatFile()
+:  let l:lines="all"
+:  py3f /usr/share/clang/clang-format.py
+:endfunction
+
+noremap <leader>r :call FormatFile()<cr>
+
 set foldmethod=syntax
 " only fold extremely deep folds automatically
 set foldlevelstart=10
