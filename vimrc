@@ -13,6 +13,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
+Plugin 'thirtythreeforty/lessspace.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
@@ -81,10 +82,7 @@ set foldmethod=syntax
 " only fold extremely deep folds automatically
 set foldlevelstart=10
 
-" spell checker highlighting
-hi SpellBad cterm=underline
-hi SpellCap cterm=bold
-hi SpellRare cterm=bold
-hi SpellLocal cterm=bold
-
 set spell spelllang=en_gb
+
+set listchars=tab:>·,trail:·,extends:>,precedes:<
+set list
