@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
 
@@ -28,10 +28,16 @@ set relativenumber
 set cursorline
 set wildmenu
 
+" fix colour in tmux
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+
+
 " solarized stuff
 syntax enable
+set termguicolors
 set background=light
-colorscheme solarized
+colorscheme solarized8
 
 " show existing tab with 4 spaces width
 set tabstop=4
@@ -85,4 +91,3 @@ hi SpellLocal cterm=bold
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
 hi SpellBad     gui=undercurl guisp=red term=undercurl cterm=undercurl
-
