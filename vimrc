@@ -13,7 +13,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
-Plugin 'thirtythreeforty/lessspace.vim'
+Plugin 'gmoe/vim-faust'
+Plugin 'vimwiki/vimwiki'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
@@ -83,6 +84,15 @@ set foldmethod=syntax
 set foldlevelstart=10
 
 set spell spelllang=en_gb
+" no spell checking for faust files
+autocmd FileType faust setlocal nospell
 
 set listchars=tab:>·,trail:·,extends:>,precedes:<
 set list
+
+" Show the status line always
+set laststatus=2
+
+" Persistent undo
+set undodir=~/.vim/undo-dir
+set undofile
