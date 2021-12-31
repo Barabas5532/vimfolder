@@ -69,6 +69,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "jump to definition
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 
+let path = expand('<sfile>:p:h')
+exec 'source' path . '/ycm-lsp-examples/vimrc.generated'
+
 "autoformat with clang-format 
 "https://clang.llvm.org/docs/ClangFormat.html
 noremap <leader>f :py3file /usr/share/clang/clang-format.py<cr>
