@@ -1,0 +1,6 @@
+{
+  "description": "ycmd purescript-language-server runtime area",
+  "dependencies": {
+    "purescript-language-server": "*"
+  }
+}
