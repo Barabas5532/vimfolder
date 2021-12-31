@@ -15,6 +15,8 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vhdirk/vim-cmake'
 Plugin 'gmoe/vim-faust'
 Plugin 'vimwiki/vimwiki'
+Plugin 'vimsence/vimsence'
+Plugin 'dart-lang/dart-vim-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
@@ -83,9 +85,12 @@ set foldmethod=syntax
 " only fold extremely deep folds automatically
 set foldlevelstart=10
 
-set spell spelllang=en_gb
-" no spell checking for faust files
-autocmd FileType faust setlocal nospell
+" Enable spell checking for syntax files which check the spelling in comments,
+" and other plain text files
+set spelllang=en_gb
+autocmd FileType c setlocal spell
+autocmd FileType markdown setlocal spell
+autocmd FileType vimwiki setlocal spell
 
 set listchars=tab:>·,trail:·,extends:>,precedes:<
 set list
@@ -96,3 +101,9 @@ set laststatus=2
 " Persistent undo
 set undodir=~/.vim/undo-dir
 set undofile
+
+" Turn off vimwiki for files outside of the wiki directory
+let g:vimwiki_global_ext = 0 
+
+" Do not automatically insert newline at end of file
+:set nofixendofline
