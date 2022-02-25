@@ -17,6 +17,7 @@ Plugin 'gmoe/vim-faust'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vimsence/vimsence'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'thosakwe/vim-flutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
@@ -68,9 +69,19 @@ let g:ycm_clangd_args = [ '--header-insertion=never' ]
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "jump to definition
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>q :YcmCompleter FixIt<CR>
 
 let path = expand('<sfile>:p:h')
 exec 'source' path . '/ycm-lsp-examples/vimrc.generated'
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 "autoformat with clang-format 
 "https://clang.llvm.org/docs/ClangFormat.html
@@ -110,3 +121,8 @@ let g:vimwiki_global_ext = 0
 
 " Do not automatically insert newline at end of file
 :set nofixendofline
+
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
