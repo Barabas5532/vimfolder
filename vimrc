@@ -71,8 +71,13 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>q :YcmCompleter FixIt<CR>
 
-let path = expand('<sfile>:p:h')
-exec 'source' path . '/ycm-lsp-examples/vimrc.generated'
+let g:ycm_language_server = [
+  \   {
+  \     'name': 'dart',
+  \     'cmdline': [ 'dart', '/opt/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot', '--lsp' ],
+  \     'filetypes': [ 'dart' ],
+  \   },
+  \ ]
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
