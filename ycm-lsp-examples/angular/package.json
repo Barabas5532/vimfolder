@@ -1,8 +1,0 @@
-{
-  "description": "ycmd angular-language-server area",
-  "dependencies": {
-    "@angular/language-server": "*",
-    "@angular/language-service": "*",
-    "typescript": "*"
-  }
-}
