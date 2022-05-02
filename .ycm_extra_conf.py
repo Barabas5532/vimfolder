@@ -141,6 +141,33 @@ def MakeRelativePathsInFlagsAbsolute(flags, working_directory):
     return new_flags
 
 
+def CleanUpFlags(flags):
+    """
+    Removes anything that might create false errors.
+
+    These include gcc specific options, and embedded standard libraries.
+    """
+
+    logging.debug(f"cleaning up: {flags}")
+
+    flags_to_remove = ["-mlongcalls", "-fstrict-volatile-bitfields"]
+    for flag in flags_to_remove:
+        if flag in flags:
+            flags.remove(flag)
+
+    # prevent false errors from assert
+    flags.append("-DNDEBUG")
+
+    # ESP_IDF use GCC extension for variadic macro in ESP_LOGI
+    flags.append("-Wno-gnu-zero-variadic-macro-arguments")
+
+    # False positives. GCC actually accepts NULL as a nullptr
+    flags.append("-Wno-zero-as-null-pointer-constant")
+
+    logging.debug(f"cleaned up: {flags}")
+    return flags
+
+
 def FlagsForClangComplete(root):
     try:
         clang_complete_path = FindNearest(root, '.clang_complete')
@@ -186,9 +213,9 @@ def FlagsForCompilationDatabase(root, filename):
         if not compilation_info:
             logging.info("No compilation info for " + filename + " in compilation database")
             return None
-        return MakeRelativePathsInFlagsAbsolute(
+        return CleanUpFlags(MakeRelativePathsInFlagsAbsolute(
                 compilation_info.compiler_flags_,
-                compilation_info.compiler_working_dir_)
+                compilation_info.compiler_working_dir_))
     except Exception as e:
         logging.error(f"FlagsForCompilationDatabase raised exception: {e}")
         return None
