@@ -18,6 +18,8 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vimsence/vimsence'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'thosakwe/vim-flutter'
+Plugin 'mfukar/robotframework-vim'
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required for Vundle
@@ -67,9 +69,13 @@ xnoremap <leader>w <esc>:'<,'>:w !wc -w<CR>
 " don't do automatic #include header 
 let g:ycm_clangd_args = [ '--header-insertion=never' ]
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+if executable('rust-analyzer')
+    let g:ycm_rust_toolchain_root = '/usr'
+endif
 "jump to definition
 nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>q :YcmCompleter FixIt<CR>
+vnoremap <leader>q :YcmCompleter FixIt<CR>
 
 let g:ycm_language_server = [
   \   {
