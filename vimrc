@@ -1,29 +1,5 @@
-set nocompatible              " required for Vundle
-filetype off                  " required for Vundle
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'tpope/vim-fugitive'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'vhdirk/vim-cmake'
-Plugin 'gmoe/vim-faust'
-Plugin 'vimwiki/vimwiki'
-Plugin 'vimsence/vimsence'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'thosakwe/vim-flutter'
-Plugin 'mfukar/robotframework-vim'
-Plugin 'rust-lang/rust.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required for Vundle
-filetype plugin indent on    " required for Vundle
+set nocompatible
+filetype plugin indent on
 
 " Automatically load the doxygen syntax extensions
 :let g:load_doxygen_syntax=1
@@ -84,6 +60,8 @@ let g:ycm_language_server = [
   \     'filetypes': [ 'dart' ],
   \   },
   \ ]
+
+let g:dart_trailing_comma_indent = v:true
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.

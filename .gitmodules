@@ -1,0 +1,33 @@
+[submodule "pack/plugins/start/vim-fugitive"]
+	path = pack/plugins/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
+[submodule "pack/plugins/start/vim-solarized8"]
+	path = pack/plugins/start/vim-solarized8
+	url = git@github.com:lifepillar/vim-solarized8.git
+[submodule "pack/plugins/start/vim-cmake"]
+	path = pack/plugins/start/vim-cmake
+	url = git@github.com:vhdirk/vim-cmake.git
+[submodule "pack/plugins/start/vim-faust"]
+	path = pack/plugins/start/vim-faust
+	url = git@github.com:gmoe/vim-faust.git
+[submodule "pack/plugins/start/vimwiki"]
+	path = pack/plugins/start/vimwiki
+	url = git@github.com:vimwiki/vimwiki.git
+[submodule "pack/plugins/start/vimsence"]
+	path = pack/plugins/start/vimsence
+	url = https://github.com/vimsence/vimsence.git
+[submodule "pack/plugins/start/YouCompleteMe"]
+	path = pack/plugins/start/YouCompleteMe
+	url = git@github.com:ycm-core/YouCompleteMe.git
+[submodule "pack/plugins/start/dart-vim-plugin"]
+	path = pack/plugins/start/dart-vim-plugin
+	url = git@github.com:dart-lang/dart-vim-plugin.git
+[submodule "pack/plugins/start/vim-flutter"]
+	path = pack/plugins/start/vim-flutter
+	url = git@github.com:thosakwe/vim-flutter.git
+[submodule "pack/plugins/start/robotframework-vim"]
+	path = pack/plugins/start/robotframework-vim
+	url = git@github.com:mfukar/robotframework-vim.git
+[submodule "pack/plugins/start/rust.vim"]
+	path = pack/plugins/start/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
