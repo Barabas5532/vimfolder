@@ -1,0 +1,15 @@
+{
+    "rust-analyzer": {
+        "server": {
+            "path": "/usr/bin/rust-analyzer"
+        }
+    },
+    "languageserver": {
+        "verible": {
+            "command": "verible-verilog-ls",
+            "filetypes": [
+                "verilog"
+            ]
+        }
+    }
+}

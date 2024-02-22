@@ -15,7 +15,6 @@ set wildmenu
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 
-
 " solarized stuff
 syntax enable
 set termguicolors
@@ -40,49 +39,7 @@ let mapleader=","
 " word count on selection
 xnoremap <leader>w <esc>:'<,'>:w !wc -w<CR>
 
-" hide ycm live compilation warnings
-" let g:ycm_show_diagnostics_ui = 0
-" don't do automatic #include header 
-let g:ycm_clangd_args = [ '--header-insertion=never' ]
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-if executable('rust-analyzer')
-    let g:ycm_rust_toolchain_root = '/usr'
-endif
-"jump to definition
-nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>q :YcmCompleter FixIt<CR>
-vnoremap <leader>q :YcmCompleter FixIt<CR>
-
-let g:ycm_language_server = [
-  \   {
-  \     'name': 'dart',
-  \     'cmdline': [ 'dart', '/opt/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot', '--lsp' ],
-  \     'filetypes': [ 'dart' ],
-  \   },
-  \ ]
-
 let g:dart_trailing_comma_indent = v:true
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-"autoformat with clang-format 
-"https://clang.llvm.org/docs/ClangFormat.html
-noremap <leader>f :py3file /usr/share/clang/clang-format.py<cr>
-
-"format the whole file at once
-:function FormatFile()
-:  let l:lines="all"
-:  py3f /usr/share/clang/clang-format.py
-:endfunction
-
-noremap <leader>r :call FormatFile()<cr>
 
 set foldmethod=syntax
 " only fold extremely deep folds automatically
@@ -115,3 +72,7 @@ if executable("rg")
     set grepprg=rg\ --vimgrep\ --no-heading
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
+
+packadd! matchit
+# match_words for verilog
+let b:match_words = '\<begin\>:\<end\>,\<module\>:\<endmodule\>,\<case\>:\<endcase\>'

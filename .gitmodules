@@ -16,18 +16,21 @@
 [submodule "pack/plugins/start/vimsence"]
 	path = pack/plugins/start/vimsence
 	url = https://github.com/vimsence/vimsence.git
-[submodule "pack/plugins/start/YouCompleteMe"]
-	path = pack/plugins/start/YouCompleteMe
-	url = git@github.com:ycm-core/YouCompleteMe.git
 [submodule "pack/plugins/start/dart-vim-plugin"]
 	path = pack/plugins/start/dart-vim-plugin
 	url = git@github.com:dart-lang/dart-vim-plugin.git
-[submodule "pack/plugins/start/vim-flutter"]
-	path = pack/plugins/start/vim-flutter
-	url = git@github.com:thosakwe/vim-flutter.git
 [submodule "pack/plugins/start/robotframework-vim"]
 	path = pack/plugins/start/robotframework-vim
 	url = git@github.com:mfukar/robotframework-vim.git
 [submodule "pack/plugins/start/rust.vim"]
 	path = pack/plugins/start/rust.vim
 	url = git@github.com:rust-lang/rust.vim.git
+[submodule "pack/plugins/start/coc.nvim"]
+	path = pack/plugins/start/coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule "pack/plugins/start/vim-strictdoc"]
+	path = pack/plugins/start/vim-strictdoc
+	url = git@github.com:Barabas5532/vim-strictdoc.git
+[submodule "pack/plugins/start/d2-vim"]
+	path = pack/plugins/start/d2-vim
+	url = git@github.com:terrastruct/d2-vim.git
